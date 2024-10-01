@@ -1,0 +1,16 @@
+@use 'vuetify/settings' with (
+  $button-height: 56px,
+  $body-font-family: 'Inter',
+  $color-pack: false,
+  $utilities: false,
+  $button-text-transform: capitalize,
+  $button-border-radius: 8px,
+  $border-radius-root: 8px,
+  $icon-size: 16px,
+  $snackbar-border-radius: 0,
+  $snackbar-wrapper-margin: 0,
+  $table-border: 1px solid #F2F2F3,
+  $table-column-padding: 12px 48px,
+  $table-color: #3C3D45,
+  $pagination-item-margin: 0.5rem
+);

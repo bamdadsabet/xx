@@ -1,0 +1,9 @@
+.text-field--with-suffix {
+  .v-field--appended {
+   padding-inline-end: 0;
+  }
+}
+
+.input__suffix {
+  @apply bg-neutral-3 text-neutral-9 text-Caption-LG-2 h-full px-4 rounded-r-lg flex items-center;
+}
