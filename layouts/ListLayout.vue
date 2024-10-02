@@ -19,8 +19,18 @@
               <div v-if="header.key === 'index'" class="item text-neutral-11">{{ index + 1 }}</div>
               <div v-else class="item text-neutral-11">{{ item[header.key] }}</div>
             </div>
-            <div class="w-full flex justify-end gap-16">
-              hekko
+            <div class="w-full flex justify-end items-center gap-4">
+              <v-switch
+                class="switch"
+                density="compact"
+                hide-details
+              />
+              <v-btn color="red" :ripple="{ class: 'bg-neutral-1 opacity-30' }" size="25" variant="text">
+                <v-icon size="20">edit</v-icon>
+              </v-btn>
+              <v-btn :ripple="{ class: 'bg-neutral-1 opacity-30' }" size="25" variant="text">
+                <v-icon size="20">trash</v-icon>
+              </v-btn>
             </div>
           </div>
         </section>
@@ -30,8 +40,20 @@
       </template>
 
       <template #item.operation>
-        <h1>hello</h1>
-        <v-slot name="operation" />
+        <div class="flex justify-end items-center gap-x-4 h-4">
+          <v-slot name="operation" />
+          <v-switch
+            class="switch"
+            density="compact"
+            hide-details
+          />
+          <v-btn color="red" :ripple="{ class: 'bg-neutral-1 opacity-30' }" size="25" variant="text">
+            <v-icon size="20">edit</v-icon>
+          </v-btn>
+          <v-btn :ripple="{ class: 'bg-neutral-1 opacity-30' }" size="25" variant="text">
+            <v-icon size="20">trash</v-icon>
+          </v-btn>
+        </div>
       </template>
       <template #bottom>
         <v-pagination
@@ -58,6 +80,7 @@
   }
   defineProps<Props>()
   const page = ref<number>(1)
+  const x = ref<boolean>(true)
 
   const headers = [
     {
@@ -97,6 +120,19 @@
     &:deep(td) {
       padding-top: 20px!important;
       padding-bottom: 20px!important;
+    }
+  }
+  .switch {
+    &:deep(.v-switch__track) {
+      height: 18px;
+      min-width: 35px;
+      background: transparent;
+      border: 1px solid var(--Base-Black, #1A1E16);
+    }
+    &:deep(.v-switch__thumb) {
+      width: 10px;
+      height: 10px;
+      background: black;
     }
   }
 </style>

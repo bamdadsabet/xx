@@ -44,4 +44,13 @@ router.isReady().then(() => {
   localStorage.removeItem('vuetify:dynamic-reload')
 })
 
+export const paths = {
+  CATEGORY_PATH: 'online-menu/categories',
+  ITEMS_PATH: 'online-menu/items',
+  INGREDIENTS_PATH: 'online-menu/ingredients',
+  DIGITAL_MENU_PATH: 'online-menu/digital-menu',
+  SETTINGS_PATH: 'online-menu/settings',
+  QR_MENU_PATH: 'online-menu/qr-menu',
+} as const
+
 export default router
